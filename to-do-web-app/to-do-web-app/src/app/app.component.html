@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">ToDoApp</a>
+
+    <div
+      class="collapse navbar-collapse"
+      id="navbarSupportedContent"
+      mdbCollapse
+    >
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            aria-current="page"
+            routerLink=""
+            (click)="showSearchBox()"
+            >DashBoard</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            aria-current="page"
+            href="/to-do-lists"
+            (click)="hideSearchBox()"
+            >Add</a
+          >
+        </li>
+      </ul>
+      <div *ngIf="nav.visible" class="md-form mt-0">
+        <input
+          class="form-control mr-sm-2"
+          type="text"
+          placeholder="Search"
+          (keydown.enter)="search($event)"
+        />
+      </div>
+      <div>
+        <p class="headerName">{{ userName }}</p>
+      </div>
+      <div>
+        <app-authentication-button></app-authentication-button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,37 @@
+<div class="masonry-with-columns-2" style="background-color: ghostwhite">
+  <div>
+    <div class="card">
+      <div *ngIf="notReminded">
+        <div
+          cdkDropList
+          #notRemindedList="cdkDropList"
+          [cdkDropListData]="notReminded"
+          (cdkDropListDropped)="dropNotReminded($event)"
+        >
+          <app-to-do-preview
+            *ngFor="let toDoList of notReminded"
+            cdkDrag
+            [toDoList]="toDoList"
+            (itemDeletedEvent)="getAllToDoLists()"
+            (listRemindedEvent)="listReminded($event)"
+          ></app-to-do-preview>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div
+        cdkDropList
+        #notRemindedList="cdkDropList"
+        [cdkDropListData]="reminded"
+        (cdkDropListDropped)="dropReminded($event)"
+      >
+        <app-to-do-preview
+          *ngFor="let toDoList of reminded"
+          cdkDrag
+          [toDoList]="toDoList"
+          (itemDeletedEvent)="getAllToDoLists()"
+        ></app-to-do-preview>
+      </div>
+    </div>
+  </div>
+</div>

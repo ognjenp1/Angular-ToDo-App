@@ -1,0 +1,49 @@
+<h3 *ngIf="!list.id">Add new ToDo List</h3>
+<p>
+  <label>Title:</label>
+  <input
+    type="text"
+    [(ngModel)]="list.title"
+    (focusout)="handleListTitle($event)"
+    class="form-control"
+  />
+</p>
+<p>
+  <label>Reminder date: </label>
+  <input
+    type="datetime-local"
+    [(ngModel)]="list.reminderDate"
+    class="form-control"
+  />
+  <button (click)="handleListReminder()">Add reminder</button>
+</p>
+<div *ngIf="list">
+  <label>Items: </label>
+  <div
+    cdkDropList
+    #notCompletedList="cdkDropList"
+    [cdkDropListData]="notCompleted"
+    (cdkDropListDropped)="drop($event)"
+  >
+    <div *ngFor="let item of notCompleted" cdkDrag>
+      <app-to-do-item [toDoItem]="item" [toDoListId]="list.id"></app-to-do-item>
+    </div>
+  </div>
+  <hr />
+  <div
+    cdkDropList
+    #completedList="cdkDropList"
+    [cdkDropListData]="completed"
+    (cdkDropListDropped)="drop($event)"
+  >
+    <div *ngFor="let item of completed" cdkDrag>
+      <app-to-do-item [toDoItem]="item" [toDoListId]="list.id"></app-to-do-item>
+    </div>
+  </div>
+  <hr />
+</div>
+<app-to-do-item
+  type="text"
+  [toDoListId]="list.id"
+  (newItemAddedEvent)="addNewInput($event)"
+></app-to-do-item>

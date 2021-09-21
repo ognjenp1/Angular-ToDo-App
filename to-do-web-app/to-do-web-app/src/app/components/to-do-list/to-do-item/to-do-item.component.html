@@ -1,0 +1,7 @@
+<div *ngIf="toDoListId">
+    <input type="text" [(ngModel)]="toDoItem.description" [ngClass]="{strike: toDoItem.isCompleted}" (focusout)="handleFocusOut($event)" />
+    <input *ngIf="toDoItem.id" type="checkbox"  [checked]="toDoItem.isCompleted" (change)="handleChange()"/>
+</div>
+<div *ngIf="!toDoListId">
+    <input type="text" [(ngModel)]="toDoItem.description" (focusout)="handleFocusOut($event)"/>
+</div>

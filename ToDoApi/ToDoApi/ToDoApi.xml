@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ToDoApi</name>
+    </assembly>
+    <members>
+        <member name="M:ToDoApi.Controllers.ToDoController.#ctor(ToDoCore.Interfaces.IToDoService,Microsoft.Extensions.Logging.ILogger{ToDoApi.Controllers.ToDoController})">
+            <summary>
+            Controller constructor
+            </summary>
+        </member>
+        <member name="M:ToDoApi.Controllers.ToDoController.UpdateListPosition(System.Guid,System.Int32)">
+            <summary>
+            Updates the positions of all to do lists
+            </summary>
+        </member>
+        <member name="M:ToDoApi.Controllers.ToDoController.UpdateItemPosition(System.Guid,System.Guid,System.Int32)">
+            <summary>
+            Updated the position of all to do items within a list
+            </summary>
+        </member>
+        <member name="M:ToDoApi.Controllers.ToDoController.GetAllToDoLists">
+            <summary>
+            Retrieves all to do lists from the database
+            </summary>
+        </member>
+        <member name="M:ToDoApi.Controllers.ToDoController.GetToDoListById(System.Guid)">
+            <summary>
+            Retrieves a specfic to do list by unique id
+            </summary>
+        </member>
+        <member name="M:ToDoApi.Controllers.ToDoController.SearchToDoLists(System.String)">
+            <summary>
+            Retrieves all to do lists that contain the provided search filter in either the title or any of the items
+            </summary>
+        </member>
+        <member name="M:ToDoApi.Controllers.ToDoController.AddToDoList(ToDoCore.Models.ToDoList)">
+            <summary>
+            Adds the provided to do list to the database
+            </summary>
+        </member>
+        <member name="M:ToDoApi.Controllers.ToDoController.EditToDoList(System.Guid,ToDoCore.Models.ToDoList)">
+            <summary>
+            Updates the provided to do list to the database by the unique id
+            </summary>
+        </member>
+        <member name="M:ToDoApi.Controllers.ToDoController.DeleteToDoListbyId(System.Guid)">
+            <summary>
+            Deletes to do list from the database based on the provided unique id
+            </summary>
+        </member>
+        <member name="M:ToDoApi.Controllers.ToDoController.GetToDoItemById(System.Guid,System.Guid)">
+            <summary>
+            Retrieves a to do item from the to do list based on the list and item unique id's 
+            </summary>
+        </member>
+        <member name="M:ToDoApi.Controllers.ToDoController.AddToDoListItem(System.Guid,ToDoCore.Models.ToDoItem)">
+            <summary>
+            Adds a new to do item to the to do list based on the unique id of the list
+            </summary>
+        </member>
+        <member name="M:ToDoApi.Controllers.ToDoController.EditToDoItem(System.Guid,System.Guid,ToDoCore.Models.ToDoItem)">
+            <summary>
+            Updates to do item from the to do list based on the list and item unique id's
+            </summary>
+        </member>
+        <member name="M:ToDoApi.Controllers.ToDoController.DeleteToDoItemById(System.Guid,System.Guid)">
+            <summary>
+            Deletes a to do list item based on the list and item unique id's
+            </summary>
+        </member>
+        <member name="M:ToDoApi.Controllers.ToDoController.GetAllToDoItemsByToDoListId(System.Guid)">
+            <summary>
+            Retrieves all the items from the list based on the list unique id
+            </summary>
+        </member>
+    </members>
+</doc>

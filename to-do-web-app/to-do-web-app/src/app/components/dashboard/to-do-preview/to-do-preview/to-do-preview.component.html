@@ -1,0 +1,37 @@
+<div class="card border-primary">
+    <h2 class="card-title">{{ toDoList.title }}</h2>
+    <div class="card-body">
+        <ul class="list-group list-group-flush" *ngFor="let item of notCompleted">
+            <li [ngClass]="{strike: item.isCompleted}" class="list-group-item">{{ item.description }}</li>
+        </ul>
+        <ul class="list-group list-group-flush" *ngFor="let item of completed">
+            <li [ngClass]="{strike: item.isCompleted}" class="list-group-item">{{ item.description }}</li>
+        </ul>
+    </div>
+    <div class="btn-group">
+        <button mat-icon-button class="card-btn" (click)="deleteToDoList(toDoList.id)">
+            <mat-icon>
+                delete
+            </mat-icon>
+        </button>
+        <button mat-icon-button class="card-btn" (click)="redirectById(toDoList.id)">
+            <mat-icon>
+                arrow_circle_right
+            </mat-icon>
+        </button>
+        <button *ngIf="!toDoList.reminded" mat-icon-button class="card-btn">
+            <mat-icon>
+                <mat-icon>
+                    notifications_active
+                </mat-icon>
+            </mat-icon>
+        </button>
+        <button *ngIf="toDoList.reminded" mat-icon-button class="card-btn">
+            <mat-icon>
+                <mat-icon>
+                    notifications_none
+                </mat-icon>
+            </mat-icon>
+        </button>
+    </div>
+</div>
