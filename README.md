@@ -3,7 +3,7 @@
 Is a web application for maintaining to-do lists (like [Google Keep](https://keep.google.com/)). The application consists of 3 segments:
 * [API](#the-api)
 * [Web Client](#web-client)
-* [Security & Deployment](#security-&-deployment)
+* [Security](#security)
 
 ## The API
 
@@ -42,7 +42,7 @@ The client includes the following technologies:
 * Angular 7
 
 
-## Security & Deployment
+## Security
 
 Web client & the API supports authentication and authorization.
 
